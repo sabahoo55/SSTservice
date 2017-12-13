@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">SST service</string>
+    <string name="title_thai">ร้านอร่อยดี</string>
+    <string name="user">User :</string>
+    <string name="pass">Password :</string>
+    <string name="name">Name :</string>
+    <string name="login">Login</string>
+    <string name="register">New Register</string>
+
+
 </resources>
