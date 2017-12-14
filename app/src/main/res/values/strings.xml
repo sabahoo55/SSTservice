@@ -7,5 +7,9 @@
     <string name="login">Login</string>
     <string name="register">New Register</string>
 
+    <string name="title_have_space">Have Space</string>
+    <string name="message_have_space">PLEASE FILL ALL EVERY BLANK</string>
+
+
 
 </resources>
