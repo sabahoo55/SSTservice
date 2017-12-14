@@ -31,6 +31,7 @@
                 android:layout_height="wrap_content" />
             <!--Texfield-->
             <EditText
+                android:id="@+id/edtName"
                 android:textColor="@color/colorPrimaryDark"
                 android:inputType="text"
                 android:hint="@string/name"
@@ -51,6 +52,7 @@
                 android:layout_height="wrap_content" />
             <!--Texfield-->
             <EditText
+                android:id="@+id/edtUser"
                 android:textColor="@color/colorPrimaryDark"
                 android:inputType="text"
                 android:hint="@string/user"
@@ -71,6 +73,7 @@
                 android:layout_height="wrap_content" />
             <!--Texfield-->
             <EditText
+                android:id="@+id/edtPassword"
                 android:textColor="@color/colorPrimaryDark"
                 android:inputType="text"
                 android:hint="@string/pass"

@@ -20,7 +20,14 @@ public class MainFragment extends Fragment{
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
- //       Register Controller
+
+        registerController();
+
+    }   //  Main Method
+
+//      Register Controller
+
+    private void registerController() {
         TextView textView = getView().findViewById(R.id.txtNewRegister);
         textView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,8 +42,7 @@ public class MainFragment extends Fragment{
 
             }   //  onClick
         });
-
-    }   //  Main Method
+    }
 
     @Nullable
     @Override
