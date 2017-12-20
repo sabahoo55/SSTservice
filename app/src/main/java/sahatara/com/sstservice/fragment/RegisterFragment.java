@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -11,10 +12,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import sahatara.com.sstservice.MainActivity;
 import sahatara.com.sstservice.R;
 import sahatara.com.sstservice.utility.MyAlertDialog;
+import sahatara.com.sstservice.utility.MyConstant;
+import sahatara.com.sstservice.utility.PostUserToServer;
 
 /**
  * Created by Aum on 14/12/2560.
@@ -78,8 +82,33 @@ public class RegisterFragment extends Fragment {
 
         } else {
 //            No Space
+            try {
 
-        }
+                MyConstant myConstant = new MyConstant();
+                String tag = "20DecV1";
+                PostUserToServer postUserToServer = new PostUserToServer(getActivity());
+
+                    postUserToServer.execute(nameString, userString, passwordString,
+                        myConstant.getUrlPostUserString());
+                    String resultString = postUserToServer.get();
+                Log.d(tag, "Result ==>" + resultString);
+
+                if (Boolean.parseBoolean(resultString)) {
+                    getActivity().getSupportFragmentManager().popBackStack();
+                    Toast.makeText(getActivity(),"Upload New User Success",
+                            Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(getActivity(),"Upload New User Non Success",
+                            Toast.LENGTH_SHORT).show();
+                }
+
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+
+        }   //  if
 
     }   //  SaveController
 

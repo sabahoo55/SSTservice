@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SST service</string>
+    <string name="title_thai">ร้านอร่อยดี</string>
+    <string name="user">ลงชื่อใช้งาน :</string>
+    <string name="pass">รหัส :</string>
+    <string name="name">ชื่อ :</string>
+    <string name="login">เข้าสู่ระบบ</string>
+    <string name="register">สมัครใหม่</string>
+
+    <string name="title_have_space">Have Space</string>
+    <string name="message_have_space">PLEASE FILL ALL EVERY BLANK</string>
+
+
+
+</resources>

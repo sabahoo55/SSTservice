@@ -19,8 +19,6 @@ public class MainFragment extends Fragment{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
-
         registerController();
 
     }   //  Main Method
