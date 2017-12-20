@@ -45,6 +45,7 @@
                    android:layout_height="wrap_content" />
                <!--Texfield-->
                <EditText
+                   android:id="@+id/edtUser"
                    android:textColor="@color/colorPrimaryDark"
                    android:inputType="text"
                    android:hint="@string/user"
@@ -65,6 +66,7 @@
                    android:layout_height="wrap_content" />
                <!--Texfield-->
                <EditText
+                   android:id="@+id/edtPassword"
                    android:textColor="@color/colorPrimaryDark"
                    android:inputType="textPassword"
                    android:hint="@string/pass"
@@ -74,6 +76,7 @@
            </LinearLayout>
            <!--Login Button-->
            <Button
+               android:id="@+id/btnLogin"
                android:text="@string/login"
                android:layout_width="match_parent"
                android:layout_height="wrap_content" />

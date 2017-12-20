@@ -3,12 +3,18 @@ package sahatara.com.sstservice.fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import sahatara.com.sstservice.R;
+import sahatara.com.sstservice.utility.GetDataFromServer;
+import sahatara.com.sstservice.utility.MyAlertDialog;
+import sahatara.com.sstservice.utility.MyConstant;
 
 /**
  * Created by Aum on 14/12/2560.
@@ -19,9 +25,54 @@ public class MainFragment extends Fragment{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        registerController();
+//        registerController
+            registerController();
+
+//        Login Controller
+
+            loginController();
 
     }   //  Main Method
+
+    private void loginController() {
+        Button button = getView().findViewById(R.id.btnLogin);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+//                Initial Edit Text
+                EditText userEditText = getView().findViewById(R.id.edtUser);
+                EditText passEditText = getView().findViewById(R.id.edtPassword);
+
+                String userString = userEditText.getText().toString().trim();
+                String passString = passEditText.getText().toString().trim();
+
+                if (userString.isEmpty() || passString.isEmpty()) {
+                    //Have Space
+                    MyAlertDialog myAlertDialog = new MyAlertDialog(getActivity());
+                    myAlertDialog.normalDialog(getString(R.string.title_have_space),
+                            getString(R.string.message_have_space));
+                } else {
+//                    No Space
+                    try {
+                        String tag = "20DecV1";
+                        MyConstant myConstant = new MyConstant();
+                        MyAlertDialog myAlertDialog = new MyAlertDialog(getActivity());
+                        GetDataFromServer getDataFromServer = new GetDataFromServer(getActivity());
+                        getDataFromServer.execute(myConstant.getUrlGetUserString());
+
+                        String JsonString = getDataFromServer.get();
+                        Log.d(tag, "JSON ==>" + JsonString);
+
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                }   // if
+
+            }
+        });
+    }
 
 //      Register Controller
 
