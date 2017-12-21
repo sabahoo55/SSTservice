@@ -7,9 +7,9 @@ package sahatara.com.sstservice.utility;
 public class MyConstant {
 
 //    About URL
-    private String urlPostUserString = "http://androidthai.in.th/sst/addDataAUM.php";
-    private String urlGetUserString = "http://androidthai.in.th/sst/getAllDataAUM.php";
-    private String urlGetFoodString = "http://androidthai.in.th/sst/getAllFoodAUM.php";
+    private String urlPostUserString = "http://androidthai.in.th/sst/addDataBee.php";
+    private String urlGetUserString = "http://androidthai.in.th/sst/getAllDataBee.php";
+    private String urlGetFoodString = "http://androidthai.in.th/sst/getAllFoodBee.php";
 
 
     //   About Array
